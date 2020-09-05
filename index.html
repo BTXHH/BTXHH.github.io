@@ -1,1 +1,49 @@
-123
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>为川普上香！</title>
+	</head>
+	<body>
+
+		<center>
+			<h1>川建国同志千古！</h1>
+			<img border="0" src="shit.png" width="500">
+			<p></p>
+			<img border="0" src="11.jpg" width="500">
+			<p></p>
+			<input id="btn" type="button" value="上香" style="width: 150px;height: 50px;"></input>
+		</center>
+
+	</body>
+
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		var a_idx = 0;
+		$("#btn").click(function(e){
+			var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+			var $i = $("<span/>").text(a[a_idx]);
+			a_idx = (a_idx + 1) % a.length;
+			var x=e.pageX,
+			y=e.pageY;
+			$i.css({
+				"z-index": 100000000,
+				"top": y - 20,
+				"left": x,
+				"position": "absolute",
+				"font-weight": "bold",
+				"color": "#ff6651"
+			});
+			$("body").append($i);
+			$i.animate({
+				"top": y - 180,
+				"opacity": 0
+			}, 1500, function() {
+				$i.remove();
+			});
+		})
+
+	</script>
+
+</html>
